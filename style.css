@@ -1,0 +1,264 @@
+/*
+ Theme Name:   La Gata (Blocksy child)
+ Theme URI:    http://lagataandaluza.com/
+ Description:  Blocksy Child Theme for lagataandaluza.com
+ Author:       Dataira
+ Author URI:   https://www.dataira.com/
+ Template:     blocksy
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  storefront
+ Tags:         whatever
+*/
+
+/* Reduce header height */
+[data-header*="type-1"] .ct-header [data-row="middle"] {
+  --height: 70px;
+}
+
+/*Set white background on middle main*/
+.ct-container {
+  background: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: content-box;
+}
+.ct-footer .ct-container {
+  background: #2c3e50;
+  color: white;
+}
+.ct-footer .ct-widget > * {
+  color: white !important;
+  font-size: 14px;
+}
+.ct-footer a {
+  color: white;
+}
+.ct-footer a:hover {
+  text-decoration: underline;
+}
+.ct-footer-copyright {
+  color: #FFFFFF99 !important;
+}
+.content-wide .ct-container-narrow {
+  --block-max-width: var(--container-max-width);
+  --block-wide-max-width: calc(var(--container-max-width) + var(--wide-offset) * 2);
+  max-width: var(--container-max-width);
+  background: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: content-box;
+}
+
+/* Fix header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#main-container #main {
+  padding-top: 0;
+}
+.logged-in #header {
+  top: 32px;
+}
+
+/* Reduce header height */
+[data-header*="type-1"] .ct-header [data-row="middle"] {
+  background: transparent;
+}
+
+/* Remove shadow from boxes*/
+[data-prefix="blog"] [data-cards="boxed"] .entry-card {
+  --box-shadow: none;
+}
+
+/* Footer colors */
+.ct-footer a {
+  color: white;
+  font-size: 12px;
+}
+.ct-footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.ct-footer .widget-menu {
+  line-height: 1;
+}
+
+/* Center logo on footer */
+.ct-footer .image {
+  margin: 0 auto;
+  display: block;
+}
+.ct-footer .widget_media_image {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Center footer content on mobile */
+@media screen and (max-width: 999px) {
+  .ct-footer {
+    text-align: center;
+  }
+}
+
+
+/* Remove lateral bootstraped-like shitting spacing */
+.ct-container, .ct-container-narrow {
+  width: initial;
+}
+
+/* Hide events filter block*/
+.wpem-event-filter-wrapper,
+.wpem-event-listings-header {
+  display: none !important;
+}
+
+/* Blog posts */
+.post .entry-header>*:not(:first-child) {
+    margin-top: var(--itemSpacing, 8px);
+}
+.post .meta-author {
+  display: none !important;
+}
+.post .ct-share-box {
+  display: none !important;
+}
+
+/* Events buttons */
+.wpem-theme-button, a.wpem-theme-button, button.wpem-theme-button, input.wpem-theme-button {
+  background: #2c3e50;
+}
+
+/* Events share buttons */
+.wpem-single-event-right-content .wpem-heading-text,
+.wpem-share-this-event {
+  display: none !important;
+}
+
+/* Single event styles */
+.single-event_listing .hero-section {
+  display: none !important;
+}
+.single-event_listing .site-main .wpem-single-event-wrapper {
+  margin-right: -20px;
+  margin-left: -20px;
+}
+.single-event_listing .site-main .ct-container {
+  padding-top: 0 !important;
+}
+.wpem-single-event-page .wpem-single-event-wrapper {
+  border: 0;
+}
+.wpem-single-event-page .wpem-single-event-wrapper .wpem-single-event-body .wpem-single-event-left-content:after {
+  display: none;
+}
+.wpem-single-event-body {
+  font-size: 16px;
+}
+.wpem-main a {
+  color: var(--linkInitialColor);
+}
+.wpem-main a:hover {
+  color: var(--linkHoverColor);
+}
+.wpem-main a:focus {
+  color: var(--linkHoverColor);
+}
+.wpem-main a:active {
+  color: var(--linkHoverColor);
+}
+
+/* Event buttons styles */
+#main-container .wpem-theme-button,
+#main-container a.wpem-theme-button,
+#main-container button.wpem-theme-button,
+#main-container input.wpem-theme-button {
+  color: var(--buttonTextInitialColor);
+  background-color: var(--buttonInitialColor);
+  padding: 8px 15px 6px;
+}
+#main-container .wpem-theme-button:hover,
+#main-container a.wpem-theme-button:hover,
+#main-container button.wpem-theme-button:hover,
+#main-container input.wpem-theme-button:hover {
+  color: var(--buttonTextHoverColor);
+  background-color: var(--buttonHoverColor);
+}
+
+/* Hide event showed counter */
+.wpem-viewed-event {
+  display: none !important;
+}
+
+/* Events category */
+.archive .site-main .wpem-container {
+  background: white;
+  max-width: 838px;
+}
+
+.event_listings .wpem-from-date {
+  display: none !important;
+}
+
+/* Home */
+.home .site-main .hero-section {
+  display: none !important;
+}
+#post-228 h5 {
+  font-size: 30px;
+  line-height: 1.1;
+}
+#post-228 .wp-block-group__inner-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  #post-228 .wp-block-group {
+    margin: 0 !important;
+    width: initial !important;
+  }
+  #post-228 .wp-block-group__inner-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Buttons */
+.button, .submit, .ct-button, .entry-tags a, .added_to_cart, input[type="submit"], .wp-block-file .wp-block-file__button, div:not(.is-style-outline)>.wp-block-button__link, .forminator-design--none .forminator-button, button[type="submit"]:not(.qubely-block-btn-anchor) {
+  font-weight: 700 !important;
+  padding: 6px 14px !important;
+  min-height: initial !important;
+}
+
+/* Button hover */
+.button:hover, .submit:hover, .ct-button:hover, .entry-tags a:hover, .added_to_cart:hover, input[type="submit"]:hover, .wp-block-file .wp-block-file__button:hover, div:not(.is-style-outline)>.wp-block-button__link:hover, .forminator-design--none .forminator-button:hover, button[type="submit"]:not(.qubely-block-btn-anchor):hover {
+  transform: none !important;
+}
+.button:before, .submit:before, .ct-button:before, .entry-tags a:before, .added_to_cart:before, input[type="submit"]:before, .wp-block-file .wp-block-file__button:before, div:not(.is-style-outline)>.wp-block-button__link:before, .forminator-design--none .forminator-button:before, button[type="submit"]:not(.qubely-block-btn-anchor):before {
+  display: none !important;
+}
+
+/* Button disabled */
+.button:disabled, .button.disabled, .submit:disabled, .submit.disabled, .ct-button:disabled, .ct-button.disabled, .entry-tags a:disabled, .entry-tags a.disabled, .added_to_cart:disabled, .added_to_cart.disabled, .ct-button-ghost:disabled, .ct-button-ghost.disabled, input[type="submit"]:disabled, input[type="submit"].disabled, .wp-block-button__link:disabled, .wp-block-button__link.disabled, .wp-block-file .wp-block-file__button:disabled, .wp-block-file .wp-block-file__button.disabled, .forminator-design--none .forminator-button:disabled, .forminator-design--none .forminator-button.disabled, button[type="submit"]:not(.qubely-block-btn-anchor):disabled, button[type="submit"]:not(.qubely-block-btn-anchor).disabled {
+  background-color: var(--radioCheckboxInitialColor) !important;
+  color: var(--paletteColor4) !important;
+}
+
+/* Inputs focus */
+select:focus, textarea:focus, input[type='url']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='date']:focus, input[type='email']:focus, input[type='number']:focus, input[type='search']:focus, input[type='password']:focus {
+  border-color: var(--formBorderInitialColor) !important;
+  box-shadow: 0 0 0 3px var(--buttonInitialColor) !important;
+}
+
+/* Cards (Blog archive) */
+[data-prefix="blog"] [data-cards="boxed"] .entry-card {
+  padding: 0 !important;
+}
+[data-prefix="blog"] [data-cards="boxed"] .entry-card .entry-meta {
+  display: none !important;
+}
