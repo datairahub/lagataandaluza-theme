@@ -6,7 +6,11 @@ Parent theme: [Blocksy](https://wordpress.org/themes/blocksy/)
 
 #### Installation
 
-To install it, simply create a folder `[wordpress-root]/wp-content/themes/blocksy-child` and place the files there.
+1. Install [Blocksy theme](https://wordpress.org/themes/blocksy/) on your wordpress site.
+
+2. Copy the folder `blocksy-child` to your host, on `[wordpress-root]/wp-content/themes/` directory.
+
+3. Go to your wordpress dashboard and active the **La Gata (Blocksy child)** theme.
 
 ##### htaccess
 
