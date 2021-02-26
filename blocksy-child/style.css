@@ -51,7 +51,11 @@
   box-sizing: content-box;
 }
 
-/* Fix header */
+/**
+ * HEADER
+ */
+
+/* Fix header on top */
 #header {
   position: fixed !important;
   top: 0;
@@ -65,15 +69,14 @@
   top: 32px;
 }
 
-/* Reduce header height */
+/* Remove header wrapper background */
 [data-header*="type-1"] .ct-header [data-row="middle"] {
   background: transparent;
 }
 
-/* Remove shadow from boxes*/
-[data-prefix="blog"] [data-cards="boxed"] .entry-card {
-  --box-shadow: none;
-}
+/**
+ * FOOTER
+ */
 
 /* Footer colors */
 .ct-footer a {
@@ -87,12 +90,6 @@
 .ct-footer .widget-menu {
   line-height: 1;
 }
-
-[data-footer*="type-1"] footer.ct-footer {
-  --background-image: none !important;
-  --background-color: transparent !important;
-}
-
 /* Center logo on footer */
 .ct-footer .image {
   margin: 0 auto;
@@ -103,6 +100,12 @@
   margin: 0 auto;
 }
 
+[data-footer*="type-1"] footer.ct-footer {
+  --background-image: none !important;
+  --background-color: transparent !important;
+}
+
+
 /* Center footer content on mobile */
 @media screen and (max-width: 999px) {
   .ct-footer {
@@ -110,17 +113,29 @@
   }
 }
 
+/**
+ * CONTAINERS
+ */
 
+/* Remove shadow from boxes*/
+[data-prefix="blog"] [data-cards="boxed"] .entry-card {
+  --box-shadow: none;
+}
 /* Remove lateral bootstraped-like shitting spacing */
 .ct-container, .ct-container-narrow {
   width: initial;
 }
-
-/* Hide events filter block*/
-.wpem-event-filter-wrapper,
-.wpem-event-listings-header {
+/* Cards (Blog archive) */
+.entry-card {
+  padding: 0 !important;
+}
+.entry-card .entry-meta {
   display: none !important;
 }
+
+/**
+ * POST
+ */
 
 /* Blog posts */
 .post .entry-header>*:not(:first-child) {
@@ -141,6 +156,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+/* Blockquotes */
 .entry-content blockquote {
   background: #f8f9fb !important;
   border: 0 !important;
@@ -150,6 +166,67 @@
 .entry-content blockquote p {
   font-size: smaller;
 }
+
+/**
+ * HOME PAGE
+ */
+
+/* Hide meta header on home */
+.home .site-main .hero-section {
+  display: none !important;
+}
+#post-228 h5 {
+  font-size: 30px;
+  line-height: 1.1;
+}
+#post-228 .wp-block-group__inner-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  #post-228 .wp-block-group {
+    margin: 0 !important;
+    width: initial !important;
+  }
+  #post-228 .wp-block-group__inner-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+/**
+ * BUTTONS (THEME)
+ */
+.button, .submit, .ct-button, .entry-tags a, .added_to_cart, input[type="submit"], .wp-block-file .wp-block-file__button, div:not(.is-style-outline)>.wp-block-button__link, .forminator-design--none .forminator-button, button[type="submit"]:not(.qubely-block-btn-anchor) {
+  font-weight: 700 !important;
+  padding: 6px 14px !important;
+  min-height: initial !important;
+}
+
+/* Button hover */
+.button:hover, .submit:hover, .ct-button:hover, .entry-tags a:hover, .added_to_cart:hover, input[type="submit"]:hover, .wp-block-file .wp-block-file__button:hover, div:not(.is-style-outline)>.wp-block-button__link:hover, .forminator-design--none .forminator-button:hover, button[type="submit"]:not(.qubely-block-btn-anchor):hover {
+  transform: none !important;
+}
+.button:before, .submit:before, .ct-button:before, .entry-tags a:before, .added_to_cart:before, input[type="submit"]:before, .wp-block-file .wp-block-file__button:before, div:not(.is-style-outline)>.wp-block-button__link:before, .forminator-design--none .forminator-button:before, button[type="submit"]:not(.qubely-block-btn-anchor):before {
+  display: none !important;
+}
+
+/* Button disabled */
+.button:disabled, .button.disabled, .submit:disabled, .submit.disabled, .ct-button:disabled, .ct-button.disabled, .entry-tags a:disabled, .entry-tags a.disabled, .added_to_cart:disabled, .added_to_cart.disabled, .ct-button-ghost:disabled, .ct-button-ghost.disabled, input[type="submit"]:disabled, input[type="submit"].disabled, .wp-block-button__link:disabled, .wp-block-button__link.disabled, .wp-block-file .wp-block-file__button:disabled, .wp-block-file .wp-block-file__button.disabled, .forminator-design--none .forminator-button:disabled, .forminator-design--none .forminator-button.disabled, button[type="submit"]:not(.qubely-block-btn-anchor):disabled, button[type="submit"]:not(.qubely-block-btn-anchor).disabled {
+  background-color: var(--radioCheckboxInitialColor) !important;
+  color: var(--paletteColor4) !important;
+}
+
+/* Inputs focus */
+select:focus, textarea:focus, input[type='url']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='date']:focus, input[type='email']:focus, input[type='number']:focus, input[type='search']:focus, input[type='password']:focus {
+  border-color: var(--formBorderInitialColor) !important;
+  box-shadow: 0 0 0 3px var(--buttonInitialColor) !important;
+}
+
+/**
+ * WORDPRESS EVENT MANAGER PLUGIN
+ */
 
 /* Events buttons */
 .wpem-theme-button, a.wpem-theme-button, button.wpem-theme-button, input.wpem-theme-button {
@@ -162,7 +239,7 @@
   display: none !important;
 }
 
-/* Single event styles */
+/* Single event (post) styles */
 .single-event_listing .hero-section {
   display: none !important;
 }
@@ -227,61 +304,28 @@
   display: none !important;
 }
 
-/* Home */
-.home .site-main .hero-section {
-  display: none !important;
-}
-#post-228 h5 {
-  font-size: 30px;
-  line-height: 1.1;
-}
-#post-228 .wp-block-group__inner-container {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
+/**
+ * ULTIMATE MEMBER PLUGIN
+ */
 
-@media screen and (max-width: 767px) {
-  #post-228 .wp-block-group {
-    margin: 0 !important;
-    width: initial !important;
-  }
-  #post-228 .wp-block-group__inner-container {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-}
-
-/* Buttons */
-.button, .submit, .ct-button, .entry-tags a, .added_to_cart, input[type="submit"], .wp-block-file .wp-block-file__button, div:not(.is-style-outline)>.wp-block-button__link, .forminator-design--none .forminator-button, button[type="submit"]:not(.qubely-block-btn-anchor) {
-  font-weight: 700 !important;
-  padding: 6px 14px !important;
-  min-height: initial !important;
-}
-
-/* Button hover */
-.button:hover, .submit:hover, .ct-button:hover, .entry-tags a:hover, .added_to_cart:hover, input[type="submit"]:hover, .wp-block-file .wp-block-file__button:hover, div:not(.is-style-outline)>.wp-block-button__link:hover, .forminator-design--none .forminator-button:hover, button[type="submit"]:not(.qubely-block-btn-anchor):hover {
-  transform: none !important;
-}
-.button:before, .submit:before, .ct-button:before, .entry-tags a:before, .added_to_cart:before, input[type="submit"]:before, .wp-block-file .wp-block-file__button:before, div:not(.is-style-outline)>.wp-block-button__link:before, .forminator-design--none .forminator-button:before, button[type="submit"]:not(.qubely-block-btn-anchor):before {
-  display: none !important;
-}
-
-/* Button disabled */
-.button:disabled, .button.disabled, .submit:disabled, .submit.disabled, .ct-button:disabled, .ct-button.disabled, .entry-tags a:disabled, .entry-tags a.disabled, .added_to_cart:disabled, .added_to_cart.disabled, .ct-button-ghost:disabled, .ct-button-ghost.disabled, input[type="submit"]:disabled, input[type="submit"].disabled, .wp-block-button__link:disabled, .wp-block-button__link.disabled, .wp-block-file .wp-block-file__button:disabled, .wp-block-file .wp-block-file__button.disabled, .forminator-design--none .forminator-button:disabled, .forminator-design--none .forminator-button.disabled, button[type="submit"]:not(.qubely-block-btn-anchor):disabled, button[type="submit"]:not(.qubely-block-btn-anchor).disabled {
-  background-color: var(--radioCheckboxInitialColor) !important;
-  color: var(--paletteColor4) !important;
-}
-
-/* Inputs focus */
-select:focus, textarea:focus, input[type='url']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='date']:focus, input[type='email']:focus, input[type='number']:focus, input[type='search']:focus, input[type='password']:focus {
-  border-color: var(--formBorderInitialColor) !important;
-  box-shadow: 0 0 0 3px var(--buttonInitialColor) !important;
-}
-
-/* Cards (Blog archive) */
-.entry-card {
-  padding: 0 !important;
-}
-.entry-card .entry-meta {
-  display: none !important;
+/**/
+.um .um-tip:hover,
+.um .um-field-radio.active:not(.um-field-radio-state-disabled) i,
+.um .um-field-checkbox.active:not(.um-field-radio-state-disabled) i,
+.um .um-member-name a:hover,
+.um .um-member-more a:hover,
+.um .um-member-less a:hover,
+.um .um-members-pagi a:hover,
+.um .um-cover-add:hover,
+.um .um-profile-subnav a.active,
+.um .um-item-meta a,
+.um-account-name a:hover,
+.um-account-nav a.current,
+.um-account-side li a.current span.um-account-icon,
+.um-account-side li a.current:hover span.um-account-icon,
+.um-dropdown li a:hover,
+i.um-active-color,
+span.um-active-color {
+  color: var(--buttonTextInitialColor);
+  background-color: var(--buttonInitialColor);
 }
