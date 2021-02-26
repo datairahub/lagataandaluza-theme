@@ -88,6 +88,11 @@
   line-height: 1;
 }
 
+[data-footer*="type-1"] footer.ct-footer {
+  --background-image: none !important;
+  --background-color: transparent !important;
+}
+
 /* Center logo on footer */
 .ct-footer .image {
   margin: 0 auto;
