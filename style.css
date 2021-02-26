@@ -53,13 +53,13 @@
 
 /* Fix header */
 #header {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
 }
 #main-container #main {
-  padding-top: 0;
+  padding-top: 70px !important;
 }
 .logged-in #header {
   top: 32px;
@@ -131,6 +131,24 @@
 }
 .post .ct-share-box {
   display: none !important;
+}
+.single-post .ct-related-posts-container {
+  display: none;
+}
+.single-post .hero-section {
+  max-width: var(--block-max-width) !important;
+  width: var(--container-width) !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.entry-content blockquote {
+  background: #f8f9fb !important;
+  border: 0 !important;
+  padding: 20px !important;
+  font-style: italic !important;
+}
+.entry-content blockquote p {
+  font-size: smaller;
 }
 
 /* Events buttons */
@@ -261,9 +279,9 @@ select:focus, textarea:focus, input[type='url']:focus, input[type='tel']:focus, 
 }
 
 /* Cards (Blog archive) */
-[data-prefix="blog"] [data-cards="boxed"] .entry-card {
+.entry-card {
   padding: 0 !important;
 }
-[data-prefix="blog"] [data-cards="boxed"] .entry-card .entry-meta {
+.entry-card .entry-meta {
   display: none !important;
 }
