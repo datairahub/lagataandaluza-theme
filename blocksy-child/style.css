@@ -201,6 +201,27 @@
 }
 
 /**
+ * ABOUT US PAGE (Quienes somos)
+ */
+.page-id-24 .wp-block-image {
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 0;
+  max-width: 200px;
+  margin: 0 auto;
+}
+.page-id-24 .wp-block-columns {
+  margin-bottom: 80px !important;
+}
+.page-id-24 .wp-block-column blockquote {
+  background: transparent !important;
+}
+.page-id-24 .wp-block-column cite,
+.page-id-24 .wp-block-column blockquote p {
+  font-size: 12px !important;
+}
+
+/**
  * BUTTONS (THEME)
  */
 .button, .submit, .ct-button, .entry-tags a, .added_to_cart, input[type="submit"], .wp-block-file .wp-block-file__button, div:not(.is-style-outline)>.wp-block-button__link, .forminator-design--none .forminator-button, button[type="submit"]:not(.qubely-block-btn-anchor) {
