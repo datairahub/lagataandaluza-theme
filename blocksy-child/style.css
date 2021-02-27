@@ -12,6 +12,11 @@
  Tags:         whatever
 */
 
+:root {
+  --contrastColor: #2c3e50;
+  --errorColor: #f15663;
+}
+
 /* Reduce header height */
 [data-header*="type-1"] .ct-header [data-row="middle"] {
   --height: 70px;
@@ -25,7 +30,7 @@
   box-sizing: content-box;
 }
 .ct-footer .ct-container {
-  background: #2c3e50;
+  background: var(--contrastColor);
   color: white;
 }
 .ct-footer .ct-widget > * {
@@ -63,7 +68,7 @@
   width: 100%;
 }
 #main-container #main {
-  padding-top: 70px !important;
+  padding-top: 70px;
 }
 .logged-in #header {
   top: 32px;
@@ -230,12 +235,22 @@ select:focus, textarea:focus, input[type='url']:focus, input[type='tel']:focus, 
 
 /* Events buttons */
 .wpem-theme-button, a.wpem-theme-button, button.wpem-theme-button, input.wpem-theme-button {
-  background: #2c3e50;
+  background: var(--contrastColor);
 }
 
 /* Events share buttons */
 .wpem-single-event-right-content .wpem-heading-text,
 .wpem-share-this-event {
+  display: none !important;
+}
+
+/* Event organizer */
+.wpem-event-organizer {
+  display: none !important;
+}
+
+/* Archive event (post) styles */
+.wpem-event-listings-header {
   display: none !important;
 }
 
@@ -308,24 +323,167 @@ select:focus, textarea:focus, input[type='url']:focus, input[type='tel']:focus, 
  * ULTIMATE MEMBER PLUGIN
  */
 
-/**/
-.um .um-tip:hover,
-.um .um-field-radio.active:not(.um-field-radio-state-disabled) i,
-.um .um-field-checkbox.active:not(.um-field-radio-state-disabled) i,
-.um .um-member-name a:hover,
-.um .um-member-more a:hover,
-.um .um-member-less a:hover,
-.um .um-members-pagi a:hover,
-.um .um-cover-add:hover,
-.um .um-profile-subnav a.active,
-.um .um-item-meta a,
-.um-account-name a:hover,
-.um-account-nav a.current,
-.um-account-side li a.current span.um-account-icon,
-.um-account-side li a.current:hover span.um-account-icon,
-.um-dropdown li a:hover,
-i.um-active-color,
-span.um-active-color {
+/* Base color */
+#main-container .um .um-tip:hover,
+#main-container .um .um-field-radio.active:not(.um-field-radio-state-disabled) i,
+#main-container .um .um-field-checkbox.active:not(.um-field-radio-state-disabled) i,
+#main-container .um .um-member-name a:hover,
+#main-container .um .um-member-more a:hover,
+#main-container .um .um-member-less a:hover,
+#main-container .um .um-members-pagi a:hover,
+#main-container .um .um-cover-add:hover,
+#main-container .um .um-profile-subnav a.active,
+#main-container .um .um-item-meta a,
+#main-container .um-account-name a:hover,
+#main-container .um-account-nav a.current,
+#main-container .um-account-side li a.current span.um-account-icon,
+#main-container .um-account-side li a.current:hover span.um-account-icon,
+#main-container .um-dropdown li a:hover,
+#main-container i.um-active-color,
+#main-container span.um-active-color {
+  color: var(--paletteColor1);
+}
+
+/* Add more space to checkboxes */
+#main-container .um-field-checkbox {
+  margin: 30px 0;
+}
+
+/* Button */
+#main-container .um input[type=submit].um-button,
+#main-container .um a.um-button {
   color: var(--buttonTextInitialColor);
   background-color: var(--buttonInitialColor);
+  box-shadow: none;
+  margin: 0 !important;
+  display: block;
+  padding: 6px 14px !important;
+  min-height: initial !important;
+  font-family: var(--buttonFontFamily, var(--fontFamily));
+  font-size: var(--buttonFontSize);
+  font-weight: 700 !important;
+  font-style: var(--buttonFontStyle);
+  line-height: var(--buttonLineHeight) !important;
+  letter-spacing: var(--buttonLetterSpacing);
+  text-transform: var(--buttonTextTransform) !important;
+  -webkit-text-decoration: var(--buttonTextDecoration) !important;
+  text-decoration: var(--buttonTextDecoration) !important;
 }
+
+/* Button states */
+#main-container .um input[type=submit].um-button:focus {
+  border-color: var(--formBorderInitialColor) !important;
+  box-shadow: 0 0 0 3px var(--buttonInitialColor) !important;
+}
+#main-container .um input[type=submit].um-button:hover {
+  color: var(--buttonTextHoverColor);
+  background-color: var(--buttonHoverColor);
+}
+#main-container .um a.um-button.um-disabled:hover,
+#main-container .um a.um-button.um-disabled:focus,
+#main-container .um a.um-button.um-disabled:active {
+  background-color: var(--radioCheckboxInitialColor) !important;
+  color: var(--paletteColor4) !important;
+}
+
+/* Alternative button */
+#main-container .um .um-button.um-alt,
+#main-container .um input[type=submit].um-button.um-alt {
+  background: #f8f9fb;
+}
+/* Alternative button states */
+#main-container .um .um-button.um-alt:focus,
+#main-container .um input[type=submit].um-button.um-alt:focus {
+  box-shadow: 0 0 0 3px var(--formBorderInitialColor) !important;
+}
+#main-container .um .um-button.um-alt:hover,
+#main-container .um input[type=submit].um-button.um-alt:hover {
+  background: var(--radioCheckboxInitialColor) !important;
+}
+
+/* Labels */
+#main-container .um-field-label label {
+  color: var(--color);
+}
+
+/* Inputs */
+#main-container .um .um-form input[type=text],
+#main-container .um .um-form input[type=search],
+#main-container .um .um-form input[type=tel],
+#main-container .um .um-form input[type=password],
+#main-container .um .um-form textarea {
+  color: var(--color);
+}
+
+/* Inputs states */
+#main-container .um .um-form input[type=text]:focus,
+#main-container .um .um-form input[type=search]:focus,
+#main-container .um .um-form input[type=tel]:focus,
+#main-container .um .um-form input[type=number]:focus,
+#main-container .um .um-form input[type=password]:focus,
+#main-container .um .um-form textarea:focus {
+  border-color: var(--formBorderInitialColor) !important;
+  box-shadow: 0 0 0 3px var(--buttonInitialColor) !important;
+}
+#main-container .um-form .um-field .um-field-area input.um-form-field.um-validate-not-matched,
+#main-container .um-form .um-field .um-field-area input.um-form-field.um-validate-username-exists {
+  border-color: var(--errorColor) !important;
+}
+
+#main-container .um-form .um-field .um-field-area input.um-form-field.um-validate-not-matched:focus,
+#main-container .um-form .um-field .um-field-area input.um-form-field.um-validate-username-exists:focus {
+  box-shadow: 0 0 0 3px var(--errorColor) !important;
+}
+
+/**
+ * AUTH PAGES STYLES
+ *
+ * page-id-489: Login
+ */
+
+/* Hide header */
+.um-page-login #header {
+  position: static !important;
+}
+.um-page-login #main-container #main {
+  padding-top: 0;
+}
+.um-page-login header [data-column='end'] {
+  display: none !important;
+}
+/* Center logo on header */
+.um-page-login header .ct-container {
+  padding-top: 30px;
+}
+.um-page-login header .ct-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 490px) {
+  .um-page-login header .ct-container {
+    background: transparent !important;
+  }
+}
+
+/* Hide footer */
+.um-page-login .ct-footer {
+  display: none !important;
+}
+
+/* Reduce general container width */
+.um-page-login .content-wide .ct-container {
+  --block-max-width: 400px;
+  --block-wide-max-width: 400px;
+  max-width: 430px;
+}
+
+/* Reduce title size and center it */
+.um-page-login .entry-header .page-title {
+  font-size: 20px;
+  text-align: center;
+}
+.um-page-login .hero-section[data-type="type-1"] {
+  margin-bottom: 10px;
+}
+
